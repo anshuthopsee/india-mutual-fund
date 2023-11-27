@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+}
+
+.slider text {
+  fill: #a8a8a8;
+  font-weight: bold;
+  font-size: 11px
+}
