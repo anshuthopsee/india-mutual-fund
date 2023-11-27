@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { enqueueSnackbar } from 'notistack';
 import { getSelectedFundName, getSelectedFundData, getSelectedFundStatus } from '../features/selected/selectedSlice';
 import * as d3 from 'd3';
 import { largestTriangleThreeBucket } from '@d3fc/d3fc-sample';
@@ -9,6 +10,10 @@ import { parseDate, bisectDate, formatDate, getColor } from '../utils';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+
+const showToast = (message, variant) => {
+  enqueueSnackbar(message, { variant });
+};
 
 const Chart = () => {
   const [width, setWidth] = useState(0);
