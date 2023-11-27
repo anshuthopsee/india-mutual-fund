@@ -1,7 +1,7 @@
 This is a simple web app to view the historical NAV of Indian Mutual Funds. You can search for a fund by name and view its historical NAV in a chart and also see the percentage change in the NAV over time. A date range selector is available to select and zoom in on a specific time period. The chart was made with D3 and is complete with trasnitions, graidents, and tooltips. The option to download the historical NAV data for any Mutual Fund in CSV format is available. All the Mutual Fund data, including the search results, are fetched from the [MFAPI.in](https://www.mfapi.in/) free API. The site is built with React and Material UI.
 
 ## Demo
-![Usage demo](demo/indiamutualfund.gif)
+![Usage demo](demo/india-mutual-fund.gif)
 
 ## How to use
 1. Type the name of the Mutual Fund you want to search for in the search bar and select the fund from the search results.
