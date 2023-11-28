@@ -32,7 +32,7 @@ const Layout = () => {
               to download the historical NAV data for any Mutual Fund in CSV format is available. All the Mutual 
               Fund data, including the search results, are fetched from the 
                 <Link href="https://www.mfapi.in/" target="_blank" rel="noopener"> MFAPI.in</Link> free API.
-              The App is built with React, D3, Material UI.
+              The App is built with React, D3, and Material UI.
             </Typography>
           </Box>
         </Box>
