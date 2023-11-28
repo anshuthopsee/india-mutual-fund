@@ -9,7 +9,7 @@ This is a simple web app to view the historical NAV of Indian Mutual Funds. You 
 
 ## Features
 1. Search autocomplete for Mutual Fund names.
-2. Historical NAV chart with zoom and hover features.
+2. Historical NAV chart with tooltips and date range selector.
 3. Color coded chart to indicate positive/negative NAV change.
 4. Download historical NAV data in CSV format.
 
