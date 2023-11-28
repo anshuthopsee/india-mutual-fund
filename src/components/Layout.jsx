@@ -19,7 +19,7 @@ const Layout = () => {
         <Box sx={{ mt: "70px" }}>
           <Outlet />
           <Box sx={{ width: "100%", px: "15px", mt: "20px", alignItems: "center" }}>
-            <Link href="https://github.com/anshuthopsee/india-mutual-fund" target="_blank" rel="noopener" sx={{ display: "flex", alignItems: "center", my: "10px"  }}>
+            <Link href="https://github.com/anshuthopsee/india-mutual-fund" target="_blank" rel="noopener" sx={{ display: "flex", alignItems: "center", my: "10px", width: "fit-content" }}>
               <Typography variant='h4' sx={{ fontFamily: "Exo" }}>India Mutual Fund</Typography>
               <GitHubIcon sx={{ ml: "10px", fontSize: "30px", verticalAlign: "middle" }} />
             </Link>
