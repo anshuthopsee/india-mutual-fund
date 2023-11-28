@@ -78,7 +78,7 @@ const Search = () => {
           <TextField
             {...params}
             onChange={(handleChange)}
-            label="Search Mutual Funds"
+            label="Search for a fund house"
             InputProps={{
               ...params.InputProps,
             }}
