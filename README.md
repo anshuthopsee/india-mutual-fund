@@ -3,7 +3,7 @@ This is a simple web app to view the historical NAV of Indian Mutual Funds. You 
 ![Usage demo](demo/india-mutual-fund.gif)
 
 ## How to use
-1. Type the name of the Fund house (eg: Axis, HDFC, SBI, Goldman etc.) you want to search for in the search bar and then select a fund from the search results.
+1. Type the name of the Fund house (eg: Axis, HDFC, SBI, ICICI etc.) you want to search for in the search bar and then select a fund from the search results.
 2. The chart will show the historical NAV of the selected fund. You can hover over the chart to see the NAV for a specific date. You can also zoom in on a specific time period by selecting a date range.
 3. You can download the historical NAV data for the fund in CSV format by clicking the download button.
 
