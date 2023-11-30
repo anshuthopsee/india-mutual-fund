@@ -29,9 +29,9 @@ const Layout = () => {
               of their funds in a chart and also see the percentage change in the NAV 
               over time. A date range selector is available to select and zoom in on a 
               specific time period. The data is downsampled and so the closest available 
-              dates to the ones chosen with the date range selector will be picked. The option 
-              to download the historical NAV data for any Mutual Fund in CSV format is available. 
-              All the Mutual Fund data, including the search results, are fetched from the 
+              dates to the ones chosen with the date range selector will be picked. You can 
+              also download the full scale NAV data (not downsampled) as a CSV file. All the 
+              Mutual Fund data, including the search results, are fetched from the 
                 <Link href="https://www.mfapi.in/" target="_blank" rel="noopener"> MFAPI.in</Link> free API.
               The App is built with React, D3, and Material UI.
             </Typography>
