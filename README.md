@@ -20,4 +20,4 @@ A simple web app to view the historical NAV of Indian Mutual Funds. You can sear
 4. Run `npm run dev` to start the development server.
 
 ## Site link
-## https://indiamutualfund.netlify.app/
+## https://indiamf.pages.dev/
