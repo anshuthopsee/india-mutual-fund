@@ -402,7 +402,7 @@ const Chart = () => {
 
   return (
     <div style={{ display: "flex", height: "100%", width: "100%", flexDirection: "column" }}>
-      <div ref={chartParentRef} style={{ display: 'flex', flexGrow: 1, width: '100%', position: "relative" }}>
+      <div ref={chartParentRef} style={{ display: 'flex', flexGrow: 1, minHeight: 350, width: '100%', position: "relative" }}>
         <div style={{ position: "absolute", height: "100%", 
           width: "100%", display: "flex", justifyContent: "center", 
           alignItems: "center", }}>
