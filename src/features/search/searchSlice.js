@@ -80,7 +80,7 @@ const searchSlice = createSlice({
       console.log(action.error.message)
       state.results = [];
 
-      clearToast();
+      clearTimeout(fetchResponseTimer);
       if (action.error.message !== "canceled") {
         showToast("Something went wrong. Please try again", "error");
       };
