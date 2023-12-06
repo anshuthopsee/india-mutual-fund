@@ -43,8 +43,8 @@ const savedSelectedFund = JSON.parse(localStorage.getItem("selectedFund"));
 const savedAppTheme = JSON.parse(localStorage.getItem("appTheme"));
 
 const presetFund = {
-  schemeName: "Axis Growth Opportunities Fund - Regular Plan - IDCW",
-  schemeCode: "145111"
+  schemeName: "HSBC Asia Pacific (Ex Japan) Dividend Yield Fund - Growth Direct",
+  schemeCode: "127071"
 };
 
 store.dispatch(fetchMFData(savedSelectedFund || presetFund));
