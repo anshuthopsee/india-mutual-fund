@@ -25,7 +25,8 @@ const Layout = () => {
             </Link>
             <Typography variant='body2' sx={{ color: "text.secondary", textAlign: "justify", pb: "20px" }}>
               A simple web app to view the historical NAV of Indian Mutual Funds. 
-              You can search for a fund house and view the historical NAV for one 
+              You can search for a mutual fund by the name of the fund house or the type 
+              of fund (equity/debt) and view the historical NAV for one 
               of their funds in a chart and also see the percentage change in the NAV 
               over time. A date range selector is available to select and zoom in on a 
               specific time period. The data is downsampled and so the closest available 
