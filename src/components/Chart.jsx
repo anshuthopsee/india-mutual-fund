@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { enqueueSnackbar } from 'notistack';
 import { getSelectedFundName, getSelectedFundData, getSelectedFundStatus } from '../features/selected/selectedSlice';
 import * as d3 from 'd3';
-import { largestTriangleThreeBucket } from '@d3fc/d3fc-sample';
 import { interpolatePath } from 'd3-interpolate-path';
 import { sliderBottom } from 'd3-simple-slider';
 import { parseDate, bisectDate, formatDate, getColor } from '../utils';
@@ -54,25 +53,17 @@ const Chart = () => {
       .append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-    const formattedData = [];
+    const step = Math.ceil(fundData.length / 125);
 
-    for (let i = 0; i < fundData.length; i++) {
+    const data = [];
+
+    for (let i = fundData.length - 1; i >= 0; i -= step) {
       const d = fundData[i];
-      formattedData.push({
+      data.push({
         date: parseDate(d.date),
         nav: Number(d.nav),
       });
     };
-
-    const sampler = largestTriangleThreeBucket();
-
-    sampler
-      .x(d => d.date)
-      .y(d => d.nav);
-
-    sampler.bucketSize(10);
-
-    const data = sampler(formattedData).reverse();
 
     const xScale = d3.scaleTime()
       .domain(d3.extent(data, (d) => d.date ))
@@ -268,12 +259,14 @@ const Chart = () => {
     };
 
     const slider = sliderBottom()
-      .min(d3.min(data, d => d.date) || 0)
-      .max(d3.max(data, d => d.date) || 1) 
+      .min(d3.min(data, d => d.date.getTime()) || 0)
+      .max(d3.max(data, d => d.date.getTime()) || 1) 
       .tickFormat(d3.timeFormat('%d-%m-%Y'))
       .ticks(0)
+      .step(1)
+      .marks(data.map(d => d.date.getTime()))
       .displayValue(false)
-      .default([d3.min(data, d => d.date) || 0, d3.max(data, d => d.date) || 1])
+      .default([d3.min(data, d => d.date.getTime()) || 0, d3.max(data, d => d.date.getTime()) || 1])
       .fill('#2196f3')
       .height(50)
       .width(width);
@@ -376,7 +369,7 @@ const Chart = () => {
     const sliderStartValue = sliderValues[0];
     const sliderEndValue = sliderValues[sliderValues.length - 1];
 
-    if (sliderStartValue instanceof Date && sliderEndValue instanceof Date) {
+    if (sliderStartValue !== 0 && sliderEndValue !== 1) {
       sliderStartDateRef.current.textContent = formatDate(sliderStartValue);
       sliderEndDateRef.current.textContent = formatDate(sliderEndValue);
     };
