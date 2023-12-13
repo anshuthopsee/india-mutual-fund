@@ -27,7 +27,6 @@ const Chart = () => {
   const fundData = useSelector(getSelectedFundData);
   const fundStatus = useSelector(getSelectedFundStatus);
   const [navChange, setNavChange] = useState(0);
-
   const [dataPeriod, setDataPeriod] = useState("");
 
   const resizeObserver = new ResizeObserver((entries) => {
@@ -53,7 +52,7 @@ const Chart = () => {
       .append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-    const step = Math.ceil(fundData.length / 125);
+    let step = Math.ceil(fundData.length / 125);
 
     const data = [];
 
@@ -63,6 +62,10 @@ const Chart = () => {
         date: parseDate(d.date),
         nav: Number(d.nav),
       });
+
+      if (i === 0) break;
+
+      if (i - step < 0) step = i;
     };
 
     const xScale = d3.scaleTime()
@@ -383,6 +386,7 @@ const Chart = () => {
           Number(fundData[fundData.length - 1].nav)
         ) * 100
       );
+
       setDataPeriod(`${formatDate(fundData[fundData.length - 1].date)} to ${formatDate(fundData[0].date)}`);
     };
   }, [fundData]);
